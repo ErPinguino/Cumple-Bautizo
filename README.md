@@ -40,15 +40,15 @@ babyshower/
 │   ├── lib/
 │   │   └── prisma.ts            # Instancia singleton de PrismaClient
 │   └── types/
-│       └── index.ts             # Tipos TypeScript (Regalo)
+│       └── index.ts             # Tipos TypeScrip
 ├── public/
-│   ├── plimplim_1.png           # Personaje pantalla 1
-│   ├── plimplim.png             # Personaje pantalla 2
-│   ├── plimplim_deco.png        # Personaje esquina decorativo
-│   └── plim_plim_ty.jpg         # Imagen pantalla de gracias
-├── prisma.config.ts             # Configuración de Prisma 7
+│   ├── plimplim_1.png          
+│   ├── plimplim.png             
+│   ├── plimplim_deco.png        
+│   └── plim_plim_ty.jpg        
+├── prisma.config.ts             # Configuración de Prisma
 ├── package.json
-└── .env                         # Variables de entorno (no subir a git)
+└── .env                         # Variables de entorno
 ```
 
 ---
@@ -153,7 +153,7 @@ Los errores de validación (nombre vacío, regalo no seleccionado, regalo ya cog
 
 ---
 
-## ⚙️ Instalación y puesta en marcha
+## ⚙️ Instalación y cómo hacer que funcione
 
 ### 1. Clonar e instalar dependencias
 
@@ -162,7 +162,7 @@ git clone <https://github.com/ErPinguino/Cumple-Bautizo.git>
 npm install
 ```
 
-### 2. Configurar variables de entorno
+### 2. Configurar env
 
 Crea un archivo `.env` en la raíz del proyecto:
 
