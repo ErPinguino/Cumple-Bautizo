@@ -1,0 +1,25 @@
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Tabla de Regalos
+model Regalo {
+  id          Int        @id @default(autoincrement())
+  nombre      String
+  descripcion String?    
+  precio      String?    
+  invitados   Invitado[] 
+}
+
+// Tabla de Invitados
+model Invitado {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  regaloId  Int      
+  regalo    Regalo   @relation(fields: [regaloId], references: [id])
+  createdAt DateTime @default(now())
+}

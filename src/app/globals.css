@@ -1,0 +1,114 @@
+/* --- Fondo --- */
+body {
+    background-color: #FCE4EC ; 
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #424242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+}
+
+/* --- La Tarjeta Principal --- */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 30px; 
+    box-shadow: 0 20px 40px rgba(229, 57, 53, 0.08); 
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    z-index: 20;
+    transition: max-width 0.4s ease-in-out; /* Animación suave al crecer */
+}
+
+/* Cuando necesitemos más espacio (Pantalla 2) */
+.container.ancho {
+    max-width: 800px;
+}
+
+/* --- Textos y Botones --- */
+h1 { color: #1E88E5; margin-bottom: 10px; font-size: 30px; font-weight: 800; }
+
+input[type="text"] {
+    padding: 15px; width: 100%; max-width: 350px; border-radius: 15px;
+    border: 2px solid #EEEEEE; font-size: 16px; margin-top: 15px; text-align: center;
+    transition: border-color 0.3s; outline: none;
+}
+input[type="text"]:focus { border-color: #1E88E5; }
+
+.btn {
+    background: linear-gradient(135deg, #FFD54F, #FFCA28); color: #D32F2F; border: none; 
+    padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 25px; 
+    cursor: pointer; margin-top: 30px; transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(255, 202, 40, 0.4); 
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255, 202, 40, 0.6); }
+
+/* --- Cuadrícula para los regalos --- */
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px; 
+    margin-top: 25px;
+}
+
+.regalo-item {
+    background-color: #FCE4EC; 
+    border: 2px solid transparent; 
+    padding: 15px;
+    border-radius: 15px; 
+    text-align: center; 
+    cursor: pointer; 
+    font-size: 16px;
+    font-weight: bold; 
+    color: #C2185B; 
+    transition: all 0.3s;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.regalo-item:hover {
+    background-color: #F8BBD0; /* Rosa un poco más intenso al pasar el ratón */
+    border-color: #F48FB1;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(244, 143, 177, 0.2);
+}
+.icono { font-size: 50px; margin-bottom: -10px; }
+
+/* --- Animaciones de los personajes --- */
+.personaje-flotante {
+    position: absolute; z-index: 30; animation: float 4s ease-in-out infinite;
+}
+.personaje-esquina {
+    position: fixed; bottom: -5px; right: 5%; z-index: 10; animation: float_lento 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+@keyframes float_lento {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+/* --- Ondas decorativas --- */
+.onda-contenedor {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  line-height: 0;
+}
