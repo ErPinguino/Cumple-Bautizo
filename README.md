@@ -158,8 +158,7 @@ Los errores de validación (nombre vacío, regalo no seleccionado, regalo ya cog
 ### 1. Clonar e instalar dependencias
 
 ```bash
-git clone <url-del-repositorio>
-cd babyshower
+git clone <https://github.com/ErPinguino/Cumple-Bautizo.git>
 npm install
 ```
 
@@ -208,7 +207,6 @@ La aplicación estará disponible en `http://localhost:3000`.
 | Producción | `npm run start` | Arranca el servidor en modo producción |
 | Generar cliente | `npm run db:generate` | Regenera el cliente de Prisma |
 | Sincronizar DB | `npm run db:push` | Aplica el schema a la base de datos |
-| Migrar | `npm run db:migrate` | Crea una migración con nombre |
 | Seed | `npm run db:seed` | Carga los regalos iniciales |
 
 ---
