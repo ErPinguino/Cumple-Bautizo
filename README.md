@@ -138,18 +138,18 @@ Reserva un regalo para un invitado. Antes de crear el registro verifica que el r
 
 ## 🖥️ Flujo de la aplicación
 
-La app tiene tres pantallas que se transicionan con animaciones de Framer Motion:
+La app tiene tres pantallas que se cambian con animaciones de Framer Motion:
 
 **Pantalla 1 — Bienvenida**
-El invitado escribe su nombre. El botón "Entrar" tiene una animación de pulso continuo. También funciona pulsando Enter.
+El invitado escribe su nombre. El botón "Entrar" tiene una animación de pulso continuo.
 
 **Pantalla 2 — Lista de regalos**
-Se cargan los regalos y los ya reservados en paralelo. Mientras cargan se muestra un skeleton animado. Los regalos disponibles se pueden seleccionar con radio buttons. Los ya reservados aparecen en gris con un candado 🔒. Un contador muestra cuántos regalos quedan disponibles. Al pulsar "Elegir y Enviar" se hace la reserva en el backend.
+Se cargan los regalos y los ya reservados en paralelo. Mientras cargan se muestra un skeleton animado. Los regalos disponibles se pueden seleccionar con radio buttons. Los ya reservados aparecen en gris con un candado. Un contador muestra cuántos regalos quedan disponibles. Al pulsar "Elegir y Enviar" se hace la reserva en el backend.
 
 **Pantalla 3 — Gracias**
 Confirma la elección del invitado y lanza un efecto de confeti de colores.
 
-Los errores de validación (nombre vacío, regalo no seleccionado, regalo ya cogido) se muestran en un modal animado en lugar de alertas nativas del navegador.
+Los errores de validación (nombre vacío, regalo no seleccionado, regalo ya cogido) se muestran en un ventana animada
 
 ---
 
@@ -215,9 +215,6 @@ La aplicación estará disponible en `http://localhost:3000`.
 
 **¿Por qué `@prisma/client` en lugar de la ruta generada personalizada?**
 El proyecto usa Prisma 7 con el adaptador `better-sqlite3`. Durante el desarrollo se detectó que importar desde una ruta de output personalizada (`src/generated/prisma/client`) causaba que el seed cargara un cliente desactualizado. La solución fue importar siempre desde `@prisma/client`, que es donde Prisma genera el cliente por defecto y mantiene sincronizado.
-
-**¿Por qué SQLite?**
-Al ser una app de uso puntual (un único evento) no se necesita un servidor de base de datos. SQLite es suficiente, sencillo de configurar y no requiere infraestructura adicional.
 
 **Prevención de reservas duplicadas**
 El endpoint `POST /api/invitados` hace una verificación previa antes de crear el registro, comprobando si el `regaloId` ya tiene un invitado asignado. Esto evita que dos personas que entren al mismo tiempo puedan reservar el mismo regalo.
