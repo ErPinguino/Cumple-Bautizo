@@ -1,4 +1,4 @@
-/* --- Fondo --- */
+
 body {
     background-color: #FCE4EC ; 
     font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -11,7 +11,6 @@ body {
     overflow: hidden; 
 }
 
-/* --- La Tarjeta Principal --- */
 .container {
     background: rgba(255, 255, 255, 0.95);
     padding: 50px 40px;
@@ -22,15 +21,13 @@ body {
     width: 90%;
     position: relative;
     z-index: 20;
-    transition: max-width 0.4s ease-in-out; /* Animación suave al crecer */
+    transition: max-width 0.4s ease-in-out; 
 }
 
-/* Cuando necesitemos más espacio (Pantalla 2) */
 .container.ancho {
     max-width: 800px;
 }
 
-/* --- Textos y Botones --- */
 h1 { color: #1E88E5; margin-bottom: 10px; font-size: 30px; font-weight: 800; }
 
 input[type="text"] {
@@ -48,7 +45,6 @@ input[type="text"]:focus { border-color: #1E88E5; }
 }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255, 202, 40, 0.6); }
 
-/* --- Cuadrícula para los regalos --- */
 .opciones {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -73,14 +69,13 @@ input[type="text"]:focus { border-color: #1E88E5; }
 }
 
 .regalo-item:hover {
-    background-color: #F8BBD0; /* Rosa un poco más intenso al pasar el ratón */
+    background-color: #F8BBD0;
     border-color: #F48FB1;
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(244, 143, 177, 0.2);
 }
 .icono { font-size: 50px; margin-bottom: -10px; }
 
-/* --- Animaciones de los personajes --- */
 .personaje-flotante {
     position: absolute; z-index: 30; animation: float 4s ease-in-out infinite;
 }

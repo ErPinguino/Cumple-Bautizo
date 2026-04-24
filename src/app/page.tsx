@@ -103,7 +103,7 @@ export default function BabyshowerAurora() {
 
       <AnimatePresence mode="wait">
 
-        {/* --- PANTALLA 1: INICIO --- */}
+        {/* pantalla 1*/}
         {pantallaActual === 1 && (
           <motion.div
             key="pantalla1"
@@ -139,7 +139,7 @@ export default function BabyshowerAurora() {
           </motion.div>
         )}
 
-        {/* --- PANTALLA 2: REGALOS --- */}
+        {/* pantalla 2*/}
         {pantallaActual === 2 && (
           <motion.div
             key="pantalla2"
@@ -219,7 +219,7 @@ export default function BabyshowerAurora() {
           </motion.div>
         )}
 
-        {/* --- PANTALLA 3: DESPEDIDA --- */}
+        {/* pantalla 3*/}
         {pantallaActual === 3 && (
           <motion.div
             key="pantalla3"
@@ -291,7 +291,6 @@ export default function BabyshowerAurora() {
         </motion.div>
       )}
 
-      {/* Ondas decorativas */}
       <div className="onda-contenedor">
         <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
           <path

@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { nombre, regaloId } = body;
 
-    // 1. Verificación de seguridad: ¿Sigue libre el regalo?
+    // verifica si el regalo está libre
     const yaElegido = await prisma.invitado.findFirst({
       where: { regaloId: parseInt(regaloId) }
     });
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // 2. Si está libre, creamos el Invitado y lo vinculamos al Regalo
+    // libre? pues regalo pa ti
     await prisma.invitado.create({
       data: {
         nombre: nombre,
