@@ -1,11 +1,5 @@
-import "dotenv/config";
-import { PrismaClient } from "@prisma/client";
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
-
-const databaseUrl = process.env.DATABASE_URL ?? "file:./dev.db";
-
-const adapter = new PrismaBetterSqlite3({ url: databaseUrl });
-const prisma = new PrismaClient({ adapter });
+// 1. Importamos la conexión a Turso que ya hicimos en tu app
+import { prisma } from "../src/lib/prisma";
 
 async function main() {
   const regalos = [
@@ -26,14 +20,14 @@ async function main() {
     { nombre: "Alfombra habitación", descripcion: "Mediana-grande", precio: "30-50€" },
   ];
 
-  console.log("Empezando a cargar la lista de regalos");
+  console.log("Empezando a cargar la lista de regalos en Turso...");
 
   for (const regalo of regalos) {
     await prisma.regalo.create({ data: regalo });
     console.log(`Añadido: ${regalo.nombre}`);
   }
 
-  console.log("Lista del Babyshower cargada con éxito");
+  console.log("¡Lista cargada con éxito en la nube!");
 }
 
 main()
