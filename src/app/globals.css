@@ -1,14 +1,10 @@
 
 body {
-    background-color: #FCE4EC ; 
+    background-color: #FCE4EC; 
     font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     color: #424242;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden; 
 }
 
 .container {

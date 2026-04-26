@@ -95,10 +95,7 @@ export default function BabyshowerAurora() {
   };
 
   return (
-    <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100vh" }}>
-
-      <div className="personaje-esquina">
-        <Image src="/plimplim_deco.png" alt="Animando" width={220} height={220} />
+    <div style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "flex-start", width: "100%", minHeight: "100vh", padding: "80px 20px", boxSizing: "border-box" }}>      <div className="personaje-esquina">
       </div>
 
       <AnimatePresence mode="wait">
@@ -112,6 +109,15 @@ export default function BabyshowerAurora() {
             initial="entrada"
             animate="visible"
             exit="salida"
+            // <--- AÑADE ESTE STYLE AQUÍ --->
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%',
+                boxSizing: 'border-box'
+            }}
+            //style={{ background: "transparent", boxShadow: "none" }} 
           >
             <div className="personaje-flotante" style={{ top: "-110px", left: "50%", transform: "translateX(-50%)", marginLeft: "-75px" }}>
               <Image src="/plimplim_1.png" alt="Sentado" width={150} height={150} />
@@ -148,6 +154,7 @@ export default function BabyshowerAurora() {
             initial="entrada"
             animate="visible"
             exit="salida"
+            //style={{ background: "transparent", boxShadow: "none" }} /* <-- AÑADE ESTA LÍNEA */
           >
             <div className="personaje-flotante" style={{ top: "-110px", left: "50%", transform: "translateX(-50%)", marginLeft: "-75px" }}>
               <Image src="/plimplim.png" alt="Guiño" width={150} height={150} />
